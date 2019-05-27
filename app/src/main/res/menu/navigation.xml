@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/recognize"
+        android:icon="@drawable/ic_recognize"
+        android:title="识别"/>
+
+    <item
+        android:id="@+id/map"
+        android:icon="@drawable/ic_map"
+        android:title="探索"/>
+
+    <item
+        android:id="@+id/find"
+        android:icon="@drawable/ic_find"
+        android:title="发现"/>
+
+    <item
+        android:id="@+id/my"
+        android:icon="@drawable/ic_my"
+        android:title="我的"/>
+
+</menu>

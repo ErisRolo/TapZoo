@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.ghx.tapzoo">
+
+    <!--保持CPU 运转，屏幕和键盘灯有可能是关闭的,用于文件上传和下载 -->
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <!--允许程序打开网络套接字-->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!--允许程序设置内置sd卡的读权限-->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <!--允许程序设置内置sd卡的写权限-->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <!--允许程序获取网络状态-->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <!--允许程序访问WiFi网络信息-->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <!--允许程序读写手机状态和身份-->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <!--允许程序访问CellID或WiFi热点来获取粗略的位置-->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <!--用于访问GPS定位-->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <!--用于获取wifi的获取权限，wifi信息会用来进行网络定位-->
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <!--用于申请调用A-GPS模块-->
+    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
+    <!--用于申请获取蓝牙信息进行室内定位-->
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+
+    <uses-permission android:name="android.permission.FLASHLIGHT" />
+
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission
+        android:name="android.permission.WRITE_SETTINGS"
+        tools:ignore="ProtectedPermissions" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <!--允许程序改变网络连接状态 -->
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+
+    <application
+        android:name=".MyApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        tools:ignore="GoogleAppIndexingWarning">
+
+        <!-- 高德地图key -->
+        <meta-data
+            android:name="com.amap.api.v2.apikey"
+            android:value="ded485d3b39c5138aa8424c3c7f6ffff" />
+
+        <!-- 高德定位service -->
+        <service android:name="com.amap.api.location.APSService" />
+
+        <!--闪屏页-->
+        <activity
+            android:name=".ui.activity.SplashActivity"
+            android:theme="@style/NoActivityFullScreen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!--主界面-->
+        <activity
+            android:name=".MainActivity"
+            android:label=""
+            android:theme="@style/MainAppTheme" />
+
+        <!--登录-->
+        <activity
+            android:name=".ui.activity.LoginActivity"
+            android:label=""
+            android:theme="@style/MainAppTheme" />
+
+        <!--注册-->
+        <activity
+            android:name=".ui.activity.RegisterActivity"
+            android:label=""
+            android:theme="@style/MainAppTheme" />
+
+        <!--忘记密码-->
+        <activity
+            android:name=".ui.activity.ForgetActivity"
+            android:label=""
+            android:theme="@style/MainAppTheme" />
+
+        <!--编辑个人资料-->
+        <activity
+            android:name=".ui.activity.MyUserActivity"
+            android:label=""
+            android:theme="@style/MainAppTheme" />
+
+        <!--拍照-->
+        <activity
+            android:name=".ui.activity.TakePhotoActivity"
+            android:label=""
+            android:theme="@style/MainAppTheme" />
+
+        <!--识别结果-->
+        <activity
+            android:name=".ui.activity.CameraResultActivity"
+            android:label=""
+            android:theme="@style/MainAppTheme" />
+
+        <!--识别的列表-->
+        <activity
+            android:name=".ui.activity.RecognitionActivity"
+            android:label=""
+            android:theme="@style/MainAppTheme" />
+
+        <!--喜欢的列表-->
+        <activity
+            android:name=".ui.activity.LikeActivity"
+            android:label=""
+            android:theme="@style/MainAppTheme" />
+
+        <!--收藏的列表-->
+        <activity
+            android:name=".ui.activity.BookmarkActivity"
+            android:label=""
+            android:theme="@style/MainAppTheme" />
+
+        <!--动物详情-->
+        <activity
+            android:name=".ui.activity.AnimalActivity"
+            android:label=""
+            android:theme="@style/MainAppTheme" />
+
+    </application>
+
+</manifest>
